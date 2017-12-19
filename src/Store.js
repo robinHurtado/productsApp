@@ -15,7 +15,7 @@ const Store =  createStore(
     composeWithDevTools(middleware),
 );
 
-//subscribe (it is change listener, every action dispatch or state change will excute the callback)
+//subscribe (it is a change listener, every action dispatch or state change will excute the callback)
 Store.subscribe(throttle(() => {
     saveState({
         boardsCollection: Store.getState().boardsCollection,
