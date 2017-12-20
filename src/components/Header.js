@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../Assets/logo.svg';
-import { Link } from 'react-router-dom';
 
 const HeaderWrapper = styled.div`
     display: flex;
@@ -25,11 +24,9 @@ const Image = styled.svg`
 `
 
 const Header = () => (
-    <Link to='/'>
-        <HeaderWrapper>
-            <Image />
-        </HeaderWrapper>
-    </Link>
+  <HeaderWrapper>
+      <Image />
+  </HeaderWrapper>
 )
 
 export default Header;
