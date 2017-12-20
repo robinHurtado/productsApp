@@ -8,7 +8,7 @@ const initialState = {
   isEditingList: false,
 }
 
-export default function(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case 'SELECT_ACTIVE_BOARD':
       return {

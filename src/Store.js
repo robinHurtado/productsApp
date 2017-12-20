@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import throttle from 'lodash/throttle'; // doc: https://lodash.com/docs/4.17.4#throttle
 
 import RootReducer from './modules';
-import { saveState, loadState } from './Utils/SyncBoardCollectionLocalStorage';
+import { loadState, saveState } from './Utils/SyncBoardCollectionLocalStorage';
 
 const middleware = applyMiddleware(thunk);
 const persistedState = loadState();

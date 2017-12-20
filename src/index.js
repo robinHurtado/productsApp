@@ -9,12 +9,11 @@ import './index.css';
 import MainLayout from './containers/MainLayout';
 import Login from './containers/Login';
 import SignupForm from './containers/SignupForm';
-import Home from './containers/Home';
 import ForgotPsw from './containers/ForgotPsw';
 import BoardContainer from './containers/boards/BoardContainer';
 import ShowActiveBoard from './containers/boards/activeBoard/ShowActiveBoard';
 import NotFound from './components/NotFound';
-import Header from './components/Header';
+//import Header from './components/Header';
 import Store from './Store';
 import registerServiceWorker from './registerServiceWorker';
 

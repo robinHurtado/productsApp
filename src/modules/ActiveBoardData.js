@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
+//import { combineReducers } from 'redux';
 import uniqueId from 'lodash/uniqueId';
 
 // Reducer
-const ListReducer = (state = {}, action) => {
+export default (state = {}, action) => {
   const listId = uniqueId("list_");
 
   switch (action.type) {
@@ -79,9 +79,9 @@ export function handleDrop(cardName, cardId, listId, newListId) {
   }
 }
 
-// ToDo:understand this
+/* ToDo:understand this
 const ActiveBoardReducer = combineReducers({
   listItems: ListReducer,
-});
+});*/
 
-export default ActiveBoardReducer;
+//export default ListReducer;

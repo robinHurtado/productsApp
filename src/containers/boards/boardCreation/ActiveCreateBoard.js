@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { Wrapper } from './CreateBoard';
 import { cancelCreatingBoard } from '../../../modules/CreateBoard';
-import { submitNewBoard } from '../../../modules/BoardsCollection';
+import { submitNewBoard } from '../../../modules/submitNewBoard.js';
 import BoardTitleForm from './BoardTitleForm';
 
 const Title = styled.h3`
