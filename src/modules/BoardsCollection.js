@@ -1,3 +1,5 @@
+import Store from './../Store';
+
 const initialState = [];
 
 export default function(state = initialState, action) {
@@ -9,7 +11,7 @@ export default function(state = initialState, action) {
   }
 }
 
-export default function submitNewBoard(title) {
+export function submitNewBoard(title) {
   return dispatch => {
     dispatch({ type: 'SUBMIT_NEW_BOARD', payload: title });
     const newBoard = {

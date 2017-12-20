@@ -1,4 +1,6 @@
 import React from 'react';
+import HTML5Backend from 'react-dnd-html5-backend';
+import { DragDropContext } from 'react-dnd'; // doc: https://react-dnd.github.io/react-dnd/docs-drag-drop-context.html
 
 const MainLayout = ({children}) => (
 	<div className="app">
@@ -8,4 +10,4 @@ const MainLayout = ({children}) => (
 	</div>
 );
 
-export default MainLayout;
+export default DragDropContext(HTML5Backend)(MainLayout);
