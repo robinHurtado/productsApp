@@ -49,24 +49,23 @@ const SubmitButton = styled.button`
 
 
 let BoardTitleForm = (props) => {
+  const { handleSubmit, cancelAction } = props;
 
-    const { handleSubmit, cancelAction } = props;
-
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <Field
-                    name="boardTitle"
-                    component={BoardTitleInput}
-                    type="text"
-                />
-            </form>
-            <ButtonWrapper>
-                <CancelButton onClick={() => cancelAction()}>Cancel</CancelButton>
-                <SubmitButton onClick={handleSubmit} type="button">Create</SubmitButton>
-            </ButtonWrapper>
-        </div>
-    )
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <Field
+          name="boardTitle"
+          component={BoardTitleInput}
+          type="text"
+        />
+      </form>
+      <ButtonWrapper>
+        <CancelButton onClick={() => cancelAction()}>Cancel</CancelButton>
+        <SubmitButton onClick={handleSubmit} type="button">Create</SubmitButton>
+      </ButtonWrapper>
+    </div>
+  );
 }
 
 function validate(values) {
