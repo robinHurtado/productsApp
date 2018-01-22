@@ -21,8 +21,8 @@ class BoardContainer extends Component {
             key={board.id}
             title={board.title}
           />
-        )
-      })
+        );
+      });
   }
 
   render() {
@@ -31,7 +31,7 @@ class BoardContainer extends Component {
         <CreateBoardContainer />
         {this.renderAllBoards()}
       </Wrapper>
-    )
+    );
   }
 }
 
