@@ -32,5 +32,7 @@ ReactDOM.render(
 				</Switch>
 			</Router>
 		</MainLayout>
-	</Provider>, document.getElementById('root'));
+	</Provider>,
+	document.getElementById('root')
+);
 registerServiceWorker();

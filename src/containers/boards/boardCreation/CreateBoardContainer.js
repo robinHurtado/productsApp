@@ -20,9 +20,7 @@ CreateBoardContainer.PropTypes = {
 }
 
 function mapStateToProps({ newBoard }) {
-  return {
-    newBoard
-  }
+  return { newBoard }
 }
 
 export default connect(mapStateToProps)(CreateBoardContainer);

@@ -14,15 +14,15 @@ const Wrapper = styled.div`
 class BoardContainer extends Component {
   renderAllBoards = () => {
     const { boardsCollection } = this.props;
-      return boardsCollection.map(board => {
-        return (
-          <ShowAllBoards
-            id={board.id}
-            key={board.id}
-            title={board.title}
-          />
-        );
-      });
+    return boardsCollection.map(board => {
+      return (
+        <ShowAllBoards
+          id={board.id}
+          key={board.id}
+          title={board.title}
+        />
+      );
+    });
   }
 
   render() {
@@ -36,9 +36,7 @@ class BoardContainer extends Component {
 }
 
 function mapStateToProps({ boardsCollection }) {
-  return {
-    boardsCollection
-  }
+  return { boardsCollection }
 }
 
 export default connect(mapStateToProps)(BoardContainer);

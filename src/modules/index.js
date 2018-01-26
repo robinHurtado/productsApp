@@ -7,11 +7,11 @@ import activeBoard from './ActiveBoard';
 import activeBoardData from './ActiveBoardData';
 
 const RootReducer = combineReducers({
-    form: formReducer,
-    newBoard,
-    boardsCollection,
-    activeBoard,
-    activeBoardData,
+  form: formReducer,
+  newBoard,
+  boardsCollection,
+  activeBoard,
+  activeBoardData,
 });
 
 export default RootReducer;

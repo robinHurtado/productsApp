@@ -40,8 +40,7 @@ const CreateBoard = ({ createNewBoard }) => {
 }
 
 CreateBoard.PropTypes = {
-    createNewBoard: PropTypes.func.isRequired
+  createNewBoard: PropTypes.func.isRequired
 }
-
 
 export default connect(null, { createNewBoard })(CreateBoard);

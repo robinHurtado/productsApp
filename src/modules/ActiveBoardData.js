@@ -36,19 +36,19 @@ export default (state = {}, action) => {
       }
     }
     case 'ARCHIVE_POST': {
-        const { cardId, listId } = action.payload;
-        const currentList = state[listId];
-        const findCard = currentList.cards.find(card => card.cardId === cardId);
+      const { cardId, listId } = action.payload;
+      const currentList = state[listId];
+      const findCard = currentList.cards.find(card => card.cardId === cardId);
 
-        if (findCard.isArchived === false) {
-          findCard.isArchived = true;
-        } else {
-          findCard.isArchived = false;
-        }
-        return {
-          ...state,
-          [listId]: currentList
-        }
+      if (findCard.isArchived === false) {
+        findCard.isArchived = true;
+      } else {
+        findCard.isArchived = false;
+      }
+      return {
+        ...state,
+        [listId]: currentList
+      }
     }
     default: return state;
   }

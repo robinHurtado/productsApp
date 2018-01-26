@@ -45,11 +45,11 @@ class ShowActiveBoard extends Component {
             {this.getTitle()}
         </ActiveBoardTitle>
         <ListWrapper>
-            <ListItemsContainer />
-            { activeBoard.isEditingList
-                ? <ListEditingMode onSubmit={this.handleListSubmit} />
-                : <CreateNewList addList={enableListEditMode} />
-            }
+          <ListItemsContainer />
+          { activeBoard.isEditingList
+              ? <ListEditingMode onSubmit={this.handleListSubmit} />
+              : <CreateNewList addList={enableListEditMode} />
+          }
         </ListWrapper>
       </div>
     );

@@ -22,7 +22,7 @@ const Title = styled.h1`
 
 const ActiveBoardTitle = ({ children }) => (
   <TitleWrapper>
-      <Title>{children}</Title>
+    <Title>{children}</Title>
   </TitleWrapper>
 );
 

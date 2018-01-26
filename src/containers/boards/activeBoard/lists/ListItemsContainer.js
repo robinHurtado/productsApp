@@ -6,37 +6,32 @@ import mapValues from 'lodash/mapValues';
 import ListItem from './ListItem';
 
 const ListItemsWrapper = styled.div`
-    display: flex;
+  display: flex;
 `
-
 class ListItemsContainer extends Component {
+  renderListItems = () => {
+    const { activeBoardData } = this.props
+    const mappedList = mapValues(activeBoardData.listItems, list => list.name);
+    const mappedKeys = Object.keys(mappedList)
 
-    renderListItems = () => {
-        const { activeBoardData } = this.props
+    return mappedKeys.map((id, i) => {
+      return <ListItem id={id} key={i} name={mappedList[id]} />
+    });
+  }
 
-        const mappedList = mapValues(activeBoardData.listItems, list => list.name);
-        const mappedKeys = Object.keys(mappedList)
-
-        return mappedKeys.map((id, i) => {
-            return <ListItem id={id} key={i} name={mappedList[id]} />
-        })
-
-    }
-
-    render() {
-        return (
-            <div>
-                <ListItemsWrapper>
-                    {this.renderListItems()}
-                </ListItemsWrapper>
-            </div>
-
-        )
-    }
+  render() {
+    return (
+      <div>
+        <ListItemsWrapper>
+          {this.renderListItems()}
+        </ListItemsWrapper>
+      </div>
+    );
+  }
 }
 
 function mapStateToProps({ activeBoardData }) {
-    return { activeBoardData }
+  return { activeBoardData }
 }
 
 export default connect(mapStateToProps)(ListItemsContainer);
