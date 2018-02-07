@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const { Schema } = mongoose;
 
@@ -17,6 +18,12 @@ const userSchema = new Schema({
 });
 
 // Write some encryption for password
+userSchema.methods.generateHash = function(psw){
+	return bcrypt.hashSync(psw, bcrypt.genSaltSync(9));
+}
+userSchema.methods.validPassword = function(psw){
+	return bcrypt.compareSync(psw, this.local.psw);
+}
 
 const User = mongoose.model("User", userSchema);
 

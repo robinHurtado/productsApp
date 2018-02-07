@@ -6,17 +6,16 @@ const userController = {};
 userController.createUser = (req, res) => {
 	// Destructuring - bind variables with the keys in body object
 	const { username, email, psw  } = req.body; 
-
-	const user = new db.User({
-		username,
-		email,
-		psw
-	});
+	let user = new db.User();
+	
+	user.username = username;
+	user.email = email;
+	user.psw = user.generateHash(psw);
 
 	user.save().then((newUser) => {
 		res.status(200).json({
 			success: true,
-			data: newUser
+			data: newUser.username
 		});
 
 	}).catch((err) => {
@@ -30,10 +29,10 @@ userController.createUser = (req, res) => {
 userController.loginUser = (req, res) => {
 	const users = db.User;
 	const { username, psw  } = req.body; 
-	
+	//TODO: llamar a validPassword
 	users.findOne({'username':username,'psw':psw},'username email')
 	.then((result) => {
-		res.status(200).json({
+		res.status(200).json({ //aunque no lo encuentre entra y data va null
 			success: true,
 			data:result
 		})
