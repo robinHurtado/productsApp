@@ -1,6 +1,7 @@
 const db = require("../models"); // it loads index.js by default 
+const bcrypt = require("bcryptjs");
 
-const userController = {};
+const userController = {}; // obj that holds functions related to user
 
 // POST Function
 userController.createUser = (req, res) => {
@@ -29,19 +30,25 @@ userController.createUser = (req, res) => {
 userController.loginUser = (req, res) => {
 	const users = db.User;
 	const { username, psw  } = req.body; 
-	//TODO: llamar a validPassword
-	users.findOne({'username':username,'psw':psw},'username email')
-	.then((result) => {
-		res.status(200).json({ //aunque no lo encuentre entra y data va null
-			success: true,
-			data:result
-		})
-	}).catch((err) => {
-		res.status(500).json({
-			success: false,
-			data: err
-		})	
+	users.findOne({'username':username},'username psw email', function(err, result){
+		if (result){
+			// bcrypt func to validate password enter and password in db
+			const isValid = bcrypt.compareSync(psw, result.psw);
+			isValid === true ? res.status(200).json({
+				success: true,
+				data: result.username
+			}) : res.status(500).json({
+				success: false,
+				data: "Username or password may be incorrect, please try again."
+			})
+		} else {
+			res.status(500).json({
+				success: false,
+				data: "User does not exit, try again"
+			});
+		}
 	})
+	
 }
 
 userController.changePassword = (req, res) => {

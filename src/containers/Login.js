@@ -20,10 +20,10 @@ class Login extends React.Component {
     })
     .then(response => response.json())
     .then(json => {
-      if(json.data){
+      if(json.success){
         this.setState({msg:"success"});
       } else {
-        this.setState({msg:"User does not exist, try again."});
+        this.setState({msg:json.data});
       }
     });
 	}	

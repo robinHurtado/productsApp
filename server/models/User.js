@@ -21,9 +21,6 @@ const userSchema = new Schema({
 userSchema.methods.generateHash = function(psw){
 	return bcrypt.hashSync(psw, bcrypt.genSaltSync(9));
 }
-userSchema.methods.validPassword = function(psw){
-	return bcrypt.compareSync(psw, this.local.psw);
-}
 
 const User = mongoose.model("User", userSchema);
 
