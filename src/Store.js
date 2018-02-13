@@ -15,13 +15,13 @@ const Store =  createStore(
     composeWithDevTools(middleware),
 );
 
-//subscribe (it is a change listener, every action dispatch or state change will excute the callback)
+//subscribe (it is a change listener, every action dispatched or a state changeed will excute the callback)
 Store.subscribe(throttle(() => {
     saveState({
-        boardsCollection: Store.getState().boardsCollection,
-        activeBoard: Store.getState().activeBoard,
-        newBoard: Store.getState().newBoard,
-        activeBoardData: Store.getState().activeBoardData,
+      boardsCollection: Store.getState().boardsCollection,
+      activeBoard: Store.getState().activeBoard,
+      newBoard: Store.getState().newBoard,
+      activeBoardData: Store.getState().activeBoardData,
     })
 }, 1000));
 
