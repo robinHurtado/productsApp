@@ -1,11 +1,11 @@
 import React from 'react';
 import Filter from './Filter';
+import HotelCard from './HotelCard';
 
 const Home = () => (
   <div>
-    <aside>
-      <Filter />
-    </aside>
+    <HotelCard />
+    <Filter />
   </div>
 );
 

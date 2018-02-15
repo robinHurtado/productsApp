@@ -3,8 +3,8 @@ import HotelName from './HotelName';
 import Stars from './Stars';
 
 const FilterTitle = () => (
-  <div className="panel panel-default" style={{marginBottom: '1%'}}>
-    <div className="panel-body">
+  <div className="card" style={{marginBottom: '1%'}}>
+    <div className="card-body">
       <strong>Filtros</strong>
     </div>
   </div>
