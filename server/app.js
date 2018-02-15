@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 
 //connect to DB - run mongod before
-mongoose.connect("mongodb://localhost:27017/ndb", { useMongoClient: true });
+//mongoose.connect("mongodb://localhost:27017/ndb", { useMongoClient: true });
 
 const app = express();
 

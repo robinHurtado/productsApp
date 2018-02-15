@@ -7,12 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 import './index.css';
 import MainLayout from './containers/MainLayout';
-import Login from './containers/Login';
-import SignupForm from './containers/SignupForm';
-import ForgotPsw from './containers/ForgotPsw';
-import BoardContainer from './containers/boards/BoardContainer';
-import ShowActiveBoard from './containers/boards/activeBoard/ShowActiveBoard';
-import NotFound from './components/NotFound';
+import Home from './components/Home';
 import Store from './Store';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -23,12 +18,7 @@ ReactDOM.render(
 		<MainLayout>
 			<Router history={history}>
 				<Switch>
-					<Route component={Login} exact path='/' />
-					<Route component={SignupForm} exact path='/create-account' />
-					<Route component={BoardContainer} exact path='/home' />
-          <Route component={ShowActiveBoard} path="/b/:id" />
-					<Route component={ForgotPsw} exact path='/forgot-password' />
-          <Route component={NotFound} />
+					<Route component={Home} exact path='/' />
 				</Switch>
 			</Router>
 		</MainLayout>
