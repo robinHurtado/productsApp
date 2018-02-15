@@ -168,34 +168,6 @@
     ]
   },
   {
-    "id": "427467",
-    "name": "Royal Inca Hotel",
-    "stars": 2,
-    "price": 683.5,
-    "image": "6900423_6_b.jpg",
-    "amenities": [
-      "newspaper",
-      "coffe-maker",
-      "safety-box",
-      "kitchen-facilities",
-      "bathtub"
-    ]
-  },
-  {
-    "id": "277990",
-    "name": "Bayview Hotel",
-    "stars": 3,
-    "price": 1043.88,
-    "image": "1231695_139_b.jpg",
-    "amenities": [
-      "bathtub",
-      "deep-soaking-bathtub",
-      "kitchen-facilities",
-      "fitness-center",
-      "nightclub"
-    ]
-  },
-  {
     "id": "90757",
     "name": "Casa Andina Premium Miraflores",
     "stars": 4,
@@ -210,20 +182,6 @@
     ]
   },
   {
-    "id": "161890",
-    "name": "New Corpac Hotel",
-    "stars": 3,
-    "price": 886.12,
-    "image": "1876197_31_b.jpg",
-    "amenities": [
-      "children-club",
-      "restaurant",
-      "fitness-center",
-      "bathrobes",
-      "safety-box"
-    ]
-  },
-  {
     "id": "314944",
     "name": "Qorianka Hotel",
     "stars": 2,
@@ -235,20 +193,6 @@
       "deep-soaking-bathtub",
       "newspaper",
       "kitchen-facilities"
-    ]
-  },
-  {
-    "id": "433932",
-    "name": "Casa Suyay",
-    "stars": 3,
-    "price": 1695.37,
-    "image": "8962073_23_b.jpg",
-    "amenities": [
-      "kitchen-facilities",
-      "restaurant",
-      "nightclub",
-      "newspaper",
-      "coffe-maker"
     ]
   },
   {

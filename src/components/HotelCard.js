@@ -1,16 +1,19 @@
 import React from 'react';
 import { HandelStarIcons } from './StarIcon';
-import bathtub from '../Assets/icons/amenities/bathtub.svg';
-import beach from '../Assets/icons/amenities/beach.svg';
-import coffeMaker from '../Assets/icons/amenities/coffe-maker.svg';
 
 const HotelCard = ({name,price,stars,image,amenities}) => (
   <div>
-    <div className="col-xs-6 col-md-8" style={{float: 'right'}}>
+    <div
+      className="col-xs-6 col-md-8"
+      style={{
+        float: 'right',
+        marginBottom: '1%'
+      }}
+    >
       <div className="card">
         <img src={image}
           alt="hotel_image"
-          style={{width: '30%'}}
+          style={{width: '30%',height:'214px'}}
         />
         <div className="card-body" style={{padding: '0'}}>
           <div style={{
@@ -22,15 +25,16 @@ const HotelCard = ({name,price,stars,image,amenities}) => (
             <HandelStarIcons stars={stars} />
             <br />
             {
-              [bathtub,beach,coffeMaker].map((ameniti)=>(
-                <img src={ameniti} key={ameniti} alt="icons" style={{width:'20px',height:'20px'}} />
+              amenities.map((ameniti)=>(
+                <img src={`${ameniti}.svg`} key={ameniti}
+                  alt="icons" style={{width:'20px',height:'20px'}} />
               ))
             }
             <div style={{
               borderLeftStyle:'dotted',
               zIndex: '1',
-              marginTop: '-12%',
-              marginLeft: '56%'
+              marginTop: '-16%',
+              marginLeft: '60%'
             }}>
               <center>
                 <label>Precio por noche por <br /> habitación</label>
