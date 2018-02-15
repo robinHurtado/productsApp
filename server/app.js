@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const routes = require('./routes/routes');
+const routes = require('./routes');
 
 //connect to DB - run mongod before
 //mongoose.connect("mongodb://localhost:27017/ndb", { useMongoClient: true });

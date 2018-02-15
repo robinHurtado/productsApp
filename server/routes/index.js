@@ -1,10 +1,10 @@
 const express = require('express');
 const routes = express.Router();
 
-/*const user = require("../controller/userController");
+const user = require("../controller/hotelController");
 
-routes.post('/create-account', user.createUser);
-
+routes.get('/hotels', user.fetchHotels);
+/*
 routes.post('/login', user.loginUser);
 
 routes.post('/change-password', user.changePassword);*/

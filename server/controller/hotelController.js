@@ -1,35 +1,18 @@
-const db = require("../models"); // it loads index.js by default 
-const bcrypt = require("bcryptjs");
+const data = require('../data.json');
 
-const userController = {}; // obj that holds functions related to user
+const hotelController = {}; // obj that holds functions related to user
 
-// POST Function
-userController.createUser = (req, res) => {
-	// Destructuring - bind variables with the keys in body object
-	const { username, email, psw  } = req.body; 
-	let user = new db.User();
-	
-	user.username = username;
-	user.email = email;
-	user.psw = user.generateHash(psw);
 
-	user.save().then((newUser) => {
-		res.status(200).json({
-			success: true,
-			data: newUser.username
-		});
-
-	}).catch((err) => {
-		res.status(500).json({
-			success: false,
-			data: err
-		})
-	})
+hotelController.fetchHotels = (req, res) => {
+	res.status(200).json({
+		success: true,
+		data: data
+	});
 }
-
+/*
 userController.loginUser = (req, res) => {
 	const users = db.User;
-	const { username, psw  } = req.body; 
+	const { username, psw  } = req.body;
 	users.findOne({'username':username},'username psw email', function(err, result){
 		if (result){
 			// bcrypt func to validate password enter and password in db
@@ -48,7 +31,7 @@ userController.loginUser = (req, res) => {
 			});
 		}
 	})
-	
+
 }
 
 userController.changePassword = (req, res) => {
@@ -73,7 +56,7 @@ userController.changePassword = (req, res) => {
 
 // GET Function
 userController.get = (req, res) => {
-	// user 
+	// user
 	const users = db.User;
 
 	users.find().then((result) => {
@@ -107,6 +90,6 @@ userController.delete = (req, res) => {
 		})
 	})
 
-}
+}*/
 
-module.exports = userController;
+module.exports = hotelController;
