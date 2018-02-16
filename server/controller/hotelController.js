@@ -9,6 +9,28 @@ hotelController.fetchHotels = (req, res) => {
 		data: data
 	});
 }
+
+hotelController.fetchHotel = (req, res) => {
+	const { hotelName } = req.body;
+	let found = false;
+
+	Array.from(data)
+	.map(obj => {
+		if (obj.name == hotelName) {
+			res.status(200).json({
+				success: true,
+				data: obj
+			});
+			found = true;
+		}
+	});
+
+	found === false &&
+	res.status(500).json({
+		success: false,
+		data: "Hotel no encontrado, intente de nuevo"
+	});
+}
 /*
 userController.loginUser = (req, res) => {
 	const users = db.User;
