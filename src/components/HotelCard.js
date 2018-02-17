@@ -38,7 +38,11 @@ const HotelCard = ({name,price,stars,image,amenities}) => (
             }}>
               <center>
                 <label>Precio por noche por <br /> habitación</label>
-                <h4>ARS {price}</h4>
+                <h4 style={{color: '#e88834'}}>ARS {' '}
+                  <span style={{color: '#e37412',fontSize: '27px'}}>
+                    {price}
+                  </span>
+                </h4>
                 <button className="btn btn-primary" type="button">Ver hotel</button>
               </center>
             </div>

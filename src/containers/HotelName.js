@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { filterHoltes } from '../modules/hotels';
+import searchIcon from '../Assets/icons/filters/search.svg';
 
 class HotelName extends Component {
   constructor(){
@@ -30,7 +31,14 @@ class HotelName extends Component {
         style={{marginBottom: '1%'}}
       >
         <div className="card-body">
-          <h4>Nombre de hotel</h4>
+          <h4>
+            <img
+              src={searchIcon}
+              alt="search_icon"
+              style={{width:"20px",height:"20px"}}
+            />
+            Nombre de hotel
+          </h4>
           <div className="input-group">
             <input
               type="text"

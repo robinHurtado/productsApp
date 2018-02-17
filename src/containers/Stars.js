@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { filterHoltesByStars } from '../modules/hotels';
 import star from '../Assets/icons/filters/star_yellow.svg';
+import startBlack from '../Assets/icons/filters/star.svg';
 
 const StarIcon = () => (
   <img src={star} alt="star_icon" />
@@ -40,7 +41,14 @@ class Stars extends Component{
     return(
       <div className="card">
         <div className="card-body">
-          <h4>Estrellas</h4>
+          <h4>
+            <img
+              src={startBlack}
+              alt="search_icon"
+              style={{width:"20px",height:"20px"}}
+            />
+            Estrellas
+          </h4>
           <div>
             <input
               type="checkbox"
