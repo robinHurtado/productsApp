@@ -5,6 +5,6 @@ This app is build in ReactJs as frontend and Nodejs as a backend.
 
 >git clone https://github.com/robinHurtado/hotelApp.git
 
->git install
+>npm install
 
->git npm start
+>npm start
