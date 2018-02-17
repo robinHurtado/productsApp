@@ -1,2 +1,7 @@
-# RNApp
-This Application contains a trello clone and it is made by react.js and redux in frontend and node.js in the backend.
+# HotelApp
+This app is build in ReactJs as frontend and Nodejs as a backend.
+
+## To Run this:
+git clone https://github.com/robinHurtado/hotelApp.git
+git install
+git npm start
