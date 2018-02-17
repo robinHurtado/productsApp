@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class HotelName extends Component {
+import { filterHoltes } from '../modules/hotels';
+
+class HotelName extends Component {
   constructor(){
     super();
     this.state = {
@@ -11,18 +14,7 @@ export default class HotelName extends Component {
   }
 
   handleClick(){
-    fetch('/api/hotel',{
-      method: 'post',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(this.state)
-    })
-    .then(response => response.json())
-    .then(({data}) => {
-
-    });
+    this.props.dispatch(filterHoltes(this.state));
   }
 
   onChangeInput(e){
@@ -62,3 +54,5 @@ export default class HotelName extends Component {
     );
   }
 }
+
+export default connect()(HotelName);

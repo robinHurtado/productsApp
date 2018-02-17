@@ -1,6 +1,6 @@
 import React from 'react';
-import HotelName from './HotelName';
-import Stars from './Stars';
+import HotelName from '../containers/HotelName';
+import Stars from '../containers/Stars';
 
 const FilterTitle = () => (
   <div className="card" style={{marginBottom: '1%'}}>

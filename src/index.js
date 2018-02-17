@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory';
 
 import './index.css';
 import MainLayout from './containers/MainLayout';
-import Home from './components/Home';
+import Home from './containers/Home';
 import Store from './Store';
 import registerServiceWorker from './registerServiceWorker';
 
