@@ -1,13 +1,34 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { Tabs, Tab, TabsContainer  } from 'react-md';
+import { Redirect } from 'react-router'
 
-const Header = () => (
-  <header style={{
-    backgroundColor: '#164586',
-    padding: '1%',
-    marginBottom: '1%'
-  }}>
-    <img src="logo-almundo.svg" alt='logo_almundo' />
-  </header>
-);
+import ProductsPage from './ProductsPage';
 
-export default Header;
+export default class Header extends PureComponent {
+
+  render(){
+    return(
+        <header>
+           <TabsContainer panelClassName="md-grid" colored>
+            <Tabs
+              tabId="tabs"
+            >
+              <Tab label="Home" onClick={()=>{
+                const { history } = this.props;
+                history.push("/");
+              }}>
+              </Tab>
+              <Tab label="Products" active={true} onClick={()=>{
+                const { history } = this.props;
+                history.push("/products");
+              }}>
+
+              </Tab>
+              <Tab label="Client" />
+              <Tab label="Contacts" />
+            </Tabs>
+          </TabsContainer>
+        </header>
+    );
+  }
+}

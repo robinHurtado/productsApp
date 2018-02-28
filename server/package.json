@@ -1,5 +1,5 @@
 {
-  "name": "express-react-starter",
+  "name": "productsApp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,9 @@
     "mongoose": "^4.10.6"
   },
   "scripts": {
-    "start": "./server.js"
+    "start": "nodemon ./server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.1"
   }
 }
