@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import {
-  List,
-  ListItem,
   Grid,
   Cell } from 'react-md';
 
   import ProductCard from './ProductCard';
   import ViewSearchProducts from './ViewSearchProducts';
+  import CategoriesPanel from './CategoriesPanel';
 
 export default class ProductPage extends PureComponent{
 
@@ -14,12 +13,7 @@ export default class ProductPage extends PureComponent{
     return(
       <div>
         <Grid>
-          <List className="md-cell md-paper md-paper--1">
-            <ListItem primaryText="Inbox" />
-            <ListItem primaryText="Starred" />
-            <ListItem primaryText="Sent Mail" />
-            <ListItem primaryText="Drafts" />
-          </List>
+          <CategoriesPanel />
           <Cell size={8}>
             <ViewSearchProducts />
             <ProductCard />
