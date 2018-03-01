@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router';
-import NavigationDrawer from 'react-md/lib/NavigationDrawers';
+import React, { PureComponent } from 'react';
+import { Route, Switch } from 'react-router';
 import { Tabs, Tab, TabsContainer  } from 'react-md';
 
+import './App.css';
 import Home from './components/Home';
-import ProductsPage from './components/ProductsPage';
+import ProductsPage from './containers/ProductsPage';
 
-class App extends Component {
+class App extends PureComponent {
   render() {
     return (
       <Route

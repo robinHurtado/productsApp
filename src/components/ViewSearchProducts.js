@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   FontIcon,
-  TextField } from 'react-md';
+  TextField
+} from 'react-md';
 
 const ViewSearchProducts = () => (
   <div>
@@ -22,8 +23,7 @@ const ViewSearchProducts = () => (
     <TextField
       id="floating-center-title"
       label="Search"
-      className="md-cell md-cell--bottom"
-      style={{marginTop: '-70px',marginLeft: '67%'}}
+      className="md-cell md-cell--bottom field-search"
     />
   </div>
 );

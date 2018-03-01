@@ -1,8 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Tabs, Tab, TabsContainer  } from 'react-md';
-import { Redirect } from 'react-router'
-
-import ProductsPage from './ProductsPage';
 
 export default class Header extends PureComponent {
 

@@ -1,12 +1,8 @@
 const express = require('express');
 const routes = express.Router();
 
-const objController = require("../controller/hotelController");
+const objController = require("../controller/productsController");
 
-routes.get('/hotels', objController.fetchHotels);
-
-routes.post('/hotel', objController.fetchHotel);
-
-routes.post('/hotel_stars', objController.fetchHotelByStar);
+routes.get('/products', objController.fetchproducts);
 
 module.exports = routes;

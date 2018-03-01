@@ -1,9 +1,4 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
-
-import Home from '../components/Home';
-import ProductsPage from '../components/ProductsPage';
-import Header from '../components/Header';
 import { Tabs, Tab, TabsContainer  } from 'react-md';
 import { Redirect } from 'react-router'
 

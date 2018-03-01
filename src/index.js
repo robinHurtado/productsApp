@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Route, Router, Switch } from 'react-router';
+import { Router } from 'react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import './index.css';
 import App from './App';
-import MainLayout from './containers/MainLayout';
 import Store from './Store';
 import registerServiceWorker from './registerServiceWorker';
 import WebFontLoader from 'webfontloader';

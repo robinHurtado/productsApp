@@ -2,21 +2,31 @@ import React from 'react';
 import {
   Card,
   CardText,
-  CardTitle } from 'react-md';
+  CardTitle,
+  Grid,
+  Cell
+} from 'react-md';
 
-const ProductCard = () => (
-  <Card className="md-block-centered">
+const ProductCard = ({ brand,categories,description,name,photo,price,stock }) => (
+  <Card className="md-block-centered card">
     <CardTitle
-      title="Card Title"
-      subtitle="Card Subtitle"
+      title={name}
+      subtitle={brand}
       role="presentation"
     />
     <CardText>
-      <p>
-        lorem ipsum <br />
-        <b>Stock:</b> <label>1212</label> <br />
-        <b>Price</b> <label>$275.00</label>
-      </p>
+      <Grid>
+        <Cell size={4}>
+          <img src={photo} alt="product_photo" className="card__img" />
+        </Cell>
+        <Cell size={8}>
+          <p>
+            {description} <br />
+            <b>Stock:</b> <label>{stock}</label> <br />
+            <b>Price:</b> <label>${price}</label>
+          </p>
+        </Cell>
+      </Grid>
     </CardText>
   </Card>
 );
