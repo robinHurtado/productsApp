@@ -1,39 +1,39 @@
 import React from 'react';
-import { Tabs, Tab, TabsContainer  } from 'react-md';
-import { Redirect } from 'react-router'
+import { Route, Switch, withRouter } from 'react-router-dom';
 
-const MainLayout = (props) => (
-	<div>
-    <header>
-       <TabsContainer panelClassName="md-grid" colored>
-        <Tabs tabId="tabs">
-          <Tab
-            label="Home"
-          >
-            <Redirect push to="/" />
-            <h1>Home</h1>
-          </Tab>
-          <Tab
-            label="Products"
-            onClick={()=>{
-            props.history.push("/products");
-            }}
-          >
+import '../App.css';
+import Home from '../components/Home';
+import Clients from '../components/Clients';
+import Contact from '../components/Contact';
+import ProductsPage from './ProductsPage';
 
-          </Tab>
-          <Tab
-            label="Client"
-            onClick={()=>{
-              props.history.push("/client");
-            }}
-          >
-            <h1>Client</h1>
-          </Tab>
-          <Tab label="Contacts" />
-        </Tabs>
-      </TabsContainer>
+const Layout = ({children,history}) => (
+  <div>
+     <header className="taps">
+      <div>
+        <center>
+          <span className="header__tap" onClick={()=>{history.push("/")}}>Home</span>
+          <span className="header__tap" onClick={()=>{history.push("/products")}}>Products</span>
+          <span className="header__tap" onClick={()=>{history.push("/clients")}}>Clients</span>
+          <span className="header__tap" onClick={()=>{history.push("/contact")}}>Contact</span>
+        </center>
+      </div>
     </header>
-	</div>
+    <section>
+      {children}
+    </section>
+  </div>
 );
 
-export default MainLayout;
+const MainLayout = (props) => (
+	<Layout {...props}>
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/products" component={ProductsPage} />
+      <Route exact path="/clients" component={Clients} />
+      <Route exact path="/contact" component={Contact} />
+    </Switch>
+	</Layout>
+);
+
+export default withRouter(MainLayout);

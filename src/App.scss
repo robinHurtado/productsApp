@@ -1,6 +1,12 @@
-/* Blocks */
+/******* Blocks *******/
 .card {
   margin-bottom: 2%;
+}
+
+.taps {
+  background: #bdbdbd;
+  height: 50px;
+  padding-top: 1%;
 }
 
 .loader {
@@ -22,10 +28,16 @@
   float: right;
 }
 
-/* Elements */
+/******** Elements *******/
 .card__img {
   width: 116px;
   height: 97px;
+  padding: 2.3%;
+}
+
+.header__tap {
+  margin-right: 5%;
+  cursor: pointer;
 }
 
 /* Modifiers */

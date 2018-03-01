@@ -8,7 +8,7 @@ import {
 } from 'react-md';
 
 const ProductCard = ({ brand,categories,description,name,photo,price,stock,style }) => (
-  <Card className="md-block-centered card" style={style}>
+  <Card className="md-cell card" style={style}>
     <CardTitle
       title={name}
       subtitle={brand}

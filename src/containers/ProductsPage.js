@@ -6,7 +6,7 @@ import {
 } from 'react-md';
 
 import ProductCard from '../components/ProductCard';
-import ViewSearchProducts from '../components/ViewSearchProducts';
+import ViewSearchProducts from './ViewSearchProducts';
 import CategoriesPanel from '../components/CategoriesPanel';
 import { fetchProducts } from '../modules/products';
 import { changedViewMode } from '../modules/viewMode';
@@ -32,12 +32,11 @@ class ProductPage extends PureComponent{
           return {style: {minWidth: '872px'}};
         });
       break;
-      case "block":
+      default:
         this.setState(()=> {
           this.props.dispatch(changedViewMode());
           return {style: {minWidth: '430px'}}
         });
-      break;
     }
   }
 
@@ -54,11 +53,13 @@ class ProductPage extends PureComponent{
           <CategoriesPanel />
           <Cell size={8}>
             <ViewSearchProducts changeView={this.changeView} />
-            {
-              products.map((obj) => (
-                <ProductCard {...obj} key={obj.id} style={this.state.style} />)
-              )
-            }
+            <div>
+              {
+                products.map((obj) => (
+                  <ProductCard {...obj} key={obj.id} style={this.state.style} />)
+                )
+              }
+            </div>
           </Cell>
         </Grid>
       </div>
