@@ -7,8 +7,8 @@ import {
   Cell
 } from 'react-md';
 
-const ProductCard = ({ brand,categories,description,name,photo,price,stock }) => (
-  <Card className="md-block-centered card">
+const ProductCard = ({ brand,categories,description,name,photo,price,stock,style }) => (
+  <Card className="md-block-centered card" style={style}>
     <CardTitle
       title={name}
       subtitle={brand}
@@ -17,7 +17,7 @@ const ProductCard = ({ brand,categories,description,name,photo,price,stock }) =>
     <CardText>
       <Grid>
         <Cell size={4}>
-          <img src={photo} alt="product_photo" className="card__img" />
+          {/*<img src={photo} alt="product_photo" className="card__img" />*/}
         </Cell>
         <Cell size={8}>
           <p>

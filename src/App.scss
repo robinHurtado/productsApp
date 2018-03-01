@@ -3,15 +3,29 @@
   margin-bottom: 2%;
 }
 
-/* Elements */
-.card__img {
-  width: 116px;
-  height: 97px;
+.loader {
+  border: 12px solid #bdbdbd;
+  border-top: 12px solid #fafafa;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .field-search {
   margin-top: -70px;
   float: right;
+}
+
+/* Elements */
+.card__img {
+  width: 116px;
+  height: 97px;
 }
 
 /* Modifiers */
