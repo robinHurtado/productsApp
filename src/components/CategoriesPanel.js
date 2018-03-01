@@ -1,18 +1,27 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import {
   List,
   ListItem,
   Subheader,
   Divider,
   Avatar,
-  FontIcon } from 'react-md';
+  FontIcon
+} from 'react-md';
 
-const CategoriesPanel = () => (
+const CategoriesPanel = ({history}) => (
   <List className="md-cell md-paper md-paper--1">
     <Subheader primaryText="Categories" />
     <ListItem
       primaryText="All"
-      leftAvatar={<Avatar icon={<FontIcon>list</FontIcon>} />}
+      leftAvatar={
+        <Avatar icon={<FontIcon>list</FontIcon>} />
+      }
+      style={
+        {
+          backgroundColor: history.location.pathname === "/products" && '#BDBDBD'
+        }
+      }
     />
     <Divider />
     <ListItem
@@ -30,4 +39,4 @@ const CategoriesPanel = () => (
   </List>
 );
 
-export default CategoriesPanel;
+export default withRouter(CategoriesPanel);
