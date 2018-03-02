@@ -12,7 +12,7 @@ export default (state=[],action) => {
           return categories.indexOf(action.category) >= 0;
         });
       }
-    case 'FILTER_PRODUCTS_BY_CATEGORY':
+    case 'FILTER_PRODUCTS_BY_NAME':
       if(action.name === ""){
         return products;
       } else {
