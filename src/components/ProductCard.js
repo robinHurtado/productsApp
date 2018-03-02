@@ -17,7 +17,7 @@ const ProductCard = ({ brand,categories,description,name,photo,price,stock,style
     <CardText>
       <Grid>
         <Cell size={4}>
-          {/*<img src={photo} alt="product_photo" className="card__img" />*/}
+          <img src={photo} alt="product_photo" className="card__img" />
         </Cell>
         <Cell size={8}>
           <p>

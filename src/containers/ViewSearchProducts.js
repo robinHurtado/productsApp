@@ -6,12 +6,18 @@ import {
 } from 'react-md';
 
 import { requestViewMode } from '../modules/viewMode';
+import { filterByName } from '../modules/products';
 
 class ViewSearchProducts extends PureComponent{
 
   handleChange(arg){
     this.props.dispatch(requestViewMode());
     this.props.changeView(arg);
+  }
+
+  filterName(name){
+    console.log(name);
+    //this.props.dispatch(filterByName(name));
   }
 
   render(){
@@ -40,6 +46,8 @@ class ViewSearchProducts extends PureComponent{
         <TextField
           id="floating-center-title"
           label="Search"
+          value=""
+          onChange={this.filterName.bind(this)}
           className="md-cell md-cell--bottom field-search"
         />
       </div>

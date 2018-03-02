@@ -8,7 +8,7 @@ import {
 import ProductCard from '../components/ProductCard';
 import ViewSearchProducts from './ViewSearchProducts';
 import CategoriesPanel from '../components/CategoriesPanel';
-import { fetchProducts } from '../modules/products';
+import { fetchProducts, filterByCategory } from '../modules/products';
 import { changedViewMode } from '../modules/viewMode';
 
 class ProductPage extends PureComponent{
@@ -18,6 +18,7 @@ class ProductPage extends PureComponent{
       style: {minWidth: '872px'}
     }
     this.changeView = this.changeView.bind(this);
+    this.filterCategory = this.filterCategory.bind(this);
   }
 
   componentWillMount(){
@@ -40,6 +41,10 @@ class ProductPage extends PureComponent{
     }
   }
 
+  filterCategory(category){
+    this.props.dispatch(filterByCategory(category));
+  }
+
   render(){
     const { products, viewMode } = this.props;
     if (viewMode.isFetching){
@@ -50,7 +55,7 @@ class ProductPage extends PureComponent{
     return(
       <div>
         <Grid>
-          <CategoriesPanel />
+          <CategoriesPanel filterCategory={this.filterCategory} />
           <Cell size={8}>
             <ViewSearchProducts changeView={this.changeView} />
             <div>
