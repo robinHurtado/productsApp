@@ -5,7 +5,7 @@ import '../App.css';
 import NavBar from '../components/NavBar.js';
 import Home from '../components/Home';
 import Clients from '../components/Clients';
-import Contact from '../components/Contact';
+import Contact from './Contact';
 import ProductsPage from './ProductsPage';
 
 

@@ -1,8 +1,12 @@
 const express = require('express');
 const routes = express.Router();
 
-const objController = require("../controller/productsController");
+const productController = require("../controller/productsController");
 
-routes.get('/products', objController.fetchproducts);
+const contactController = require("../controller/contactController");
+
+routes.get('/products', productController.fetchproducts);
+
+routes.post('/contact', contactController.showData);
 
 module.exports = routes;
