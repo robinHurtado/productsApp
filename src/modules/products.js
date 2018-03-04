@@ -1,3 +1,5 @@
+import { getTotalProducts } from './productsCount';
+
 let products;
 
 export default (state=[],action) => {
@@ -43,6 +45,7 @@ export const fetchProducts = () => {
     .then(({data}) => {
       products = [...data];
       dispatch(getProductsSuccess(data));
+      dispatch(getTotalProducts(products.length));
     });
   }
 }

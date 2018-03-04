@@ -57,7 +57,7 @@ class ProductPage extends PureComponent{
         <Grid>
           <CategoriesPanel filterCategory={this.filterCategory} />
           <Cell size={8}>
-            <ViewSearchProducts changeView={this.changeView} />
+            <ViewSearchProducts changeView={this.changeView} showing={products.length} />
             <div>
               {
                 products.map((obj) => (

@@ -44,7 +44,10 @@ class ViewSearchProducts extends PureComponent{
         >
           view_module
         </Button>
-        <h5>Showing 10 products - Hidden: 5</h5>
+        <h5>
+          Showing {this.props.showing} products -
+          Hidden: {this.props.totalProducts - this.props.showing}
+        </h5>
         <TextField
           id="floating-center-title"
           label="Search"
@@ -57,6 +60,6 @@ class ViewSearchProducts extends PureComponent{
   }
 }
 
-const mapStateToProps = ({viewMode}) => ({viewMode});
+const mapStateToProps = ({ viewMode, totalProducts }) => ({ viewMode, totalProducts });
 
 export default connect(mapStateToProps)(ViewSearchProducts);
