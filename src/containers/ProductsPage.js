@@ -59,10 +59,15 @@ class ProductPage extends PureComponent{
     }
     return(
       <div>
-        <Grid>
-          <CategoriesPanel filterCategory={this.filterCategory} />
+        <Grid className="grid">
+          <CategoriesPanel
+            filterCategory={this.filterCategory}
+          />
           <Cell size={8}>
-            <ViewSearchProducts changeView={this.changeView} showing={products.length} />
+            <ViewSearchProducts
+              changeView={this.changeView}
+              showing={products.length}
+            />
             <div style={this.state.parent}>
               {
                 products.map((obj) => (

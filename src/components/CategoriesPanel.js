@@ -10,7 +10,7 @@ import {
 } from 'react-md';
 
 const CategoriesPanel = ({ history, filterCategory}) => (
-  <List className="md-cell md-paper md-paper--1">
+  <List className="md-cell md-paper md-paper--1 panel">
     <Subheader primaryText="Categories" />
     <ListItem
       primaryText="All"

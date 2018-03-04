@@ -1,6 +1,7 @@
 /******* Blocks *******/
 .card {
   margin-bottom: 2%;
+  max-height: 300px;
 }
 
 .taps {
@@ -35,11 +36,24 @@
   float: right;
 }
 
+.grid {
+  padding: 0;
+}
+
+.panel {
+  margin-top: 0;
+  margin-left: 0;
+}
+
 /******** Elements *******/
 .card__img {
   width: 126px;
   height: 126px;
   padding: 2.3%;
+}
+
+.card__text {
+  padding: 0;
 }
 
 .taps__tap {
