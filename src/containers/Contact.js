@@ -12,23 +12,39 @@ class Contact extends PureComponent {
     firtName: '',
     lastName: '',
     email: '',
-    subject: ''
+    subject: '',
+    disable: true
   }
 
   handleSubmit(e){
     e.preventDefault();
+    // send data to server
     this.props.dispatch(sendData(this.state));
   }
 
   handleChange(val,{target}){
     this.setState({[target.name]: val});
+    // enable or disable submit button depending of the state
+    setInterval(() => {
+      const {firtName, lastName, email, subject } = this.state;
+      if (firtName && lastName && email && subject){
+        // enable button
+        this.setState({disable: false});
+      } else{
+        // disable button
+        this.setState({disable: true});
+      }
+    },1000);
   }
 
   render(){
     return(
-      <div>
-        <center>
-          <form onSubmit={this.handleSubmit.bind(this)}>
+      <div className="form--center-horizontally">
+        <div className="form--center-vertically">
+          <form
+            className="form"
+            onSubmit={this.handleSubmit.bind(this)}
+          >
             <TextField
               id="floating-center-title"
               label="First Name"
@@ -40,7 +56,7 @@ class Contact extends PureComponent {
               onChange={this.handleChange.bind(this)}
               error={false}
               errorText="Please write down your first name"
-              className="md-cell md-cell--bottom"
+              className="md-cell md-cell--bottom form__textfield"
               required
             />
             <TextField
@@ -54,7 +70,7 @@ class Contact extends PureComponent {
               onChange={this.handleChange.bind(this)}
               error={false}
               errorText="Please write down last first name"
-              className="md-cell md-cell--bottom"
+              className="md-cell md-cell--bottom form__textfield"
               required
             />
             <TextField
@@ -68,7 +84,7 @@ class Contact extends PureComponent {
               onChange={this.handleChange.bind(this)}
               error={false}
               errorText="Don’t forget to tell us what your email address is"
-              className="md-cell md-cell--bottom"
+              className="md-cell md-cell--bottom form__textfield"
               required
             />
             <TextField
@@ -78,16 +94,25 @@ class Contact extends PureComponent {
               lineDirection="center"
               placeholder="Let us know your concerns!"
               maxLength={500}
+              rows={5}
               value={this.state.subject}
               onChange={this.handleChange.bind(this)}
               error={false}
               errorText="Don’t forget to write something to use!"
-              className="md-cell md-cell--bottom"
+              className="md-cell md-cell--bottom form__textfield"
               required
             />
-            <Button type="submit" raised primary>SUBMIT</Button>
+            <Button
+              type="submit"
+              raised
+              primary
+              className="form__button"
+              disabled={this.state.disable}
+            >
+              SUBMIT
+            </Button>
           </form>
-        </center>
+        </div>
       </div>
     );
   }
