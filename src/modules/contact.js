@@ -1,20 +1,4 @@
-/*const initialState = {
-  isFetching: false
-}
-
-export default (state=initialState,action) => {
-  switch(action.type){
-    case 'SEND_DATA_SUCCES':
-      return {isFetching: true};
-    default:
-      return state;
-  }
-}
-
-export const sendDataSucces = () => ({
-  type: 'SEND_DATA_SUCCES'
-});
-*/
+import { hideLoader } from './isFetching'
 
 export const sendData = (data) => {
   return (dispatch) => {
@@ -26,7 +10,9 @@ export const sendData = (data) => {
       },
       body: JSON.stringify(data)
     })
-//    .then(() => dispatch(sendDataSucces()))
+    .then(() =>
+      dispatch(hideLoader())
+    );
   }
 }
 

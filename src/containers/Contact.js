@@ -6,6 +6,7 @@ import {
 } from 'react-md';
 
 import { sendData } from '../modules/contact';
+import { showLoader } from '../modules/isFetching';
 
 class Contact extends PureComponent {
   state = {
@@ -18,8 +19,8 @@ class Contact extends PureComponent {
 
   handleSubmit(e){
     e.preventDefault();
-    // send data to server
-    this.props.dispatch(sendData(this.state));
+    this.props.dispatch(showLoader());
+    this.props.dispatch(sendData(this.state)); // send data to server
   }
 
   handleChange(val,{target}){
@@ -38,6 +39,12 @@ class Contact extends PureComponent {
   }
 
   render(){
+    const { isFetching } = this.props;
+    if (isFetching){
+      return(
+        <center><div className="loader"></div></center>
+      );
+    }
     return(
       <div className="form--center-horizontally">
         <div className="form--center-vertically">
@@ -118,4 +125,6 @@ class Contact extends PureComponent {
   }
 }
 
-export default connect()(Contact);
+const mapStateToProps = ({ isFetching }) => ({ isFetching });
+
+export default connect(mapStateToProps)(Contact);

@@ -1,4 +1,5 @@
 import { getTotalProducts } from './productsCount';
+import { hideLoader } from './isFetching';
 
 let products;
 
@@ -43,9 +44,10 @@ export const fetchProducts = () => {
     })
     .then(response => response.json())
     .then(({data}) => {
-      products = [...data];
+      products = [...data]; // save all products to filter them later by category or by its name
       dispatch(getProductsSuccess(data));
-      dispatch(getTotalProducts(products.length));
+      dispatch(getTotalProducts(products.length)); // get the total count of products
+      dispatch(hideLoader());
     });
   }
 }

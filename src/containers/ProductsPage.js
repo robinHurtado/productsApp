@@ -9,7 +9,7 @@ import ProductCard from '../components/ProductCard';
 import ViewSearchProducts from './ViewSearchProducts';
 import CategoriesPanel from '../components/CategoriesPanel';
 import { fetchProducts, filterByCategory } from '../modules/products';
-import { changedViewMode } from '../modules/viewMode';
+import { showLoader } from '../modules/isFetching';
 
 class ProductPage extends PureComponent{
   constructor(){
@@ -22,22 +22,17 @@ class ProductPage extends PureComponent{
   }
 
   componentWillMount(){
+    this.props.dispatch(showLoader());
     this.props.dispatch(fetchProducts());
   }
 
   changeView(view){
     switch(view){
       case "list":
-        this.setState(()=>{
-          this.props.dispatch(changedViewMode());
-          return {style: {minWidth: '872px'}};
-        });
+        this.setState({style: {minWidth: '872px'}});
       break;
       default:
-        this.setState(()=> {
-          this.props.dispatch(changedViewMode());
-          return {style: {minWidth: '430px'}}
-        });
+        this.setState({style: {minWidth: '430px'}});
     }
   }
 
@@ -46,8 +41,8 @@ class ProductPage extends PureComponent{
   }
 
   render(){
-    const { products, viewMode } = this.props;
-    if (viewMode.isFetching){
+    const { products, isFetching } = this.props;
+    if (isFetching){
       return(
         <center><div className="loader"></div></center>
       );
@@ -72,6 +67,6 @@ class ProductPage extends PureComponent{
   }
 }
 
-const mapStateToProps = ({products,viewMode}) => ({products,viewMode});
+const mapStateToProps = ({ products, isFetching }) => ({ products, isFetching });
 
 export default connect(mapStateToProps)(ProductPage);
