@@ -15,7 +15,8 @@ class ProductPage extends PureComponent{
   constructor(){
     super();
     this.state = {
-      style: {minWidth: '872px'}
+      parent: null,
+      width: '872px'
     }
     this.changeView = this.changeView.bind(this);
     this.filterCategory = this.filterCategory.bind(this);
@@ -29,10 +30,19 @@ class ProductPage extends PureComponent{
   changeView(view){
     switch(view){
       case "list":
-        this.setState({style: {minWidth: '872px'}});
+        this.setState({
+          parent: null,
+          width: '872px'
+        });
       break;
       default:
-        this.setState({style: {minWidth: '430px'}});
+        this.setState({
+          parent: {
+            display: 'grid',
+            gridTemplateColumns: '446px 1fr 2fr'
+          },
+          width: '430px'
+        });
     }
   }
 
@@ -53,10 +63,10 @@ class ProductPage extends PureComponent{
           <CategoriesPanel filterCategory={this.filterCategory} />
           <Cell size={8}>
             <ViewSearchProducts changeView={this.changeView} showing={products.length} />
-            <div>
+            <div style={this.state.parent}>
               {
                 products.map((obj) => (
-                  <ProductCard {...obj} key={obj.id} style={this.state.style} />)
+                  <ProductCard {...obj} key={obj.id} style={{minWidth:this.state.width}} />)
                 )
               }
             </div>
