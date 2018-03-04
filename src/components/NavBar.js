@@ -3,10 +3,7 @@ import React, { Component } from 'react';
 class NavBar extends Component {
   render(){
     const { history, location: { pathname } } = this.props;
-    if (pathname === "/products" || pathname === "/products/tech" ||
-        pathname === "/products/services" || pathname === "/products/office"){
-      var backG = '#9E9E9E';
-    }
+
     return(
       <div>
          <header className="taps">
@@ -29,7 +26,7 @@ class NavBar extends Component {
                 className="taps__tap"
                 style={
                   {
-                    backgroundColor: backG
+                    backgroundColor: pathname.indexOf('products') >= 0 && '#9E9E9E'
                   }
                 }
                 onClick={() => {
