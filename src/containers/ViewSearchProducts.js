@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   Button,
   TextField
@@ -9,9 +10,16 @@ import { requestViewMode } from '../modules/viewMode';
 import { filterByName } from '../modules/products';
 
 class ViewSearchProducts extends PureComponent{
+  static propTypes = {
+    viewMode: PropTypes.object.isRequired,
+    showing: PropTypes.number.isRequired,
+    totalProducts: PropTypes.number.isRequired
+  }
+
   state = {
     text: ""
   }
+
   handleChange(arg){
     this.props.dispatch(requestViewMode());
     this.props.changeView(arg);

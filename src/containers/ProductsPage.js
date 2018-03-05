@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   Grid,
   Cell
@@ -12,6 +13,11 @@ import { fetchProducts, filterByCategory } from '../modules/products';
 import { showLoader } from '../modules/isFetching';
 
 class ProductPage extends PureComponent{
+  static propTypes = {
+    products: PropTypes.array.isRequired,
+    isFetching: PropTypes.bool.isRequired
+  }
+
   constructor(){
     super();
     this.state = {

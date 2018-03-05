@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   TextField,
@@ -9,6 +10,10 @@ import { sendData } from '../modules/contact';
 import { showLoader } from '../modules/isFetching';
 
 class Contact extends PureComponent {
+  static propTypes = {
+    isFetching: PropTypes.bool.isRequired
+  }
+
   state = {
     firtName: '',
     lastName: '',

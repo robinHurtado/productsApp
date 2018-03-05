@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import {
   List,
@@ -75,5 +76,9 @@ const CategoriesPanel = ({ history, filterCategory}) => (
     />
   </List>
 );
+
+CategoriesPanel.propTypes = {
+  filterCategory : PropTypes.func.isRequired
+}
 
 export default withRouter(CategoriesPanel);

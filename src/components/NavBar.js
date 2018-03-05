@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NavBar extends Component {
+  static propTypes = {
+    children: PropTypes.object.isRequired
+  }
+
   render(){
     const { history, location: { pathname } } = this.props;
-
     return(
       <div>
          <header className="taps">
